@@ -303,10 +303,10 @@
                             dataEntityViewRelation.Cardinality = Metadata.Core.MetaModel.Cardinality.ZeroMore;
                             dataEntityViewRelation.Name = field.Name;
                             dataEntityViewRelation.RelatedDataEntityCardinality = Metadata.Core.MetaModel.RelatedTableCardinality.ZeroOne;
-                            dataEntityViewRelation.RelatedDataEntityRole = $"{field.Name} related role";
+                            dataEntityViewRelation.RelatedDataEntityRole = $"{Guid.NewGuid().ToString("N")}";
                             dataEntityViewRelation.Role = $"{field.Name} role";
                             
-                            dataEntityViewRelationConstraintField.Name = $"{field.Name}Constrain";
+                            dataEntityViewRelationConstraintField.Name = $"{field.Name}Constraint";
                             dataEntityViewRelationConstraintField.Field = field.Name;
                             dataEntityViewRelationConstraintField.RelatedField = "Value";
 
@@ -322,7 +322,7 @@
                         Metadata.MetaModel.ModelSaveInfo modelSaveInfo = new Metadata.MetaModel.ModelSaveInfo(this.MetadataProvider.DataEntityViewExtensions.GetModelInfo(extensionName).FirstOrDefault());
                         this.MetadataProvider.DataEntityViewExtensions.Update(dataEntityExtension, modelSaveInfo);
 
-                        updatedDataEntities += $"\t* {extensionName}\n";
+                        updatedDataEntities += $"* {extensionName}\n";
                     }
                 }
 
