@@ -304,7 +304,7 @@
                             dataEntityViewRelation.Name = field.Name;
                             dataEntityViewRelation.RelatedDataEntityCardinality = Metadata.Core.MetaModel.RelatedTableCardinality.ZeroOne;
                             dataEntityViewRelation.RelatedDataEntityRole = $"{Guid.NewGuid().ToString("N")}";
-                            dataEntityViewRelation.Role = $"{field.Name} role";
+                            dataEntityViewRelation.Role = $"{Guid.NewGuid().ToString("N")}";
                             
                             dataEntityViewRelationConstraintField.Name = $"{field.Name}Constraint";
                             dataEntityViewRelationConstraintField.Field = field.Name;
